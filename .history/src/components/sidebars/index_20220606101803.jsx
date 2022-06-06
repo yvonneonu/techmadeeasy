@@ -56,10 +56,11 @@ function SideBar({ home, favourite, selected }) {
           }}>
           <span
           style={{
+            width:"0px",
+            height:"20px",
             padding: "10px",
             boxSizing: "border-box",
             display: "flex",
-            justifyContent: "center",
             alignItems: "center",
           }}
           className={selected === "home" ? "activePage" : null} >

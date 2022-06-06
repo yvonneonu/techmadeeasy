@@ -19,11 +19,9 @@ function App() {
     setSelected(pageName);
   };
 
-  
   const [currency, setCurrency] = useState([]);
   const [cardInfo, setCardinfo] = useState([]);
-  // const [fetchFromBase, setFromBase] = useState([])
-  const [currentCurrencies, setCurrentCurrency] = useState(currency[0]);
+  const [currentCurrencies, setCurrentCurrency] = useState();
   const getData = useCallback(async () => {
     axios
       .all([
@@ -42,9 +40,7 @@ function App() {
             }
           );
           setCardinfo(res);
-        
           setCurrency(secondResponse.data.data.currencies);
-          setCurrentCurrency(secondResponse.data.data.currencies[0])
         })
       )
       .catch((error) => console.log(error));
@@ -56,8 +52,7 @@ function App() {
     getData();
   }, [getData]);
 
-  const converter = (amount, item) => amount / item.divider;
-
+  const converter = (amount, item) => amount * item.divider;
   const handleSelectedCurrency = (item) => {
     setCurrentCurrency(item);
     setShowCountry(false);
@@ -108,7 +103,6 @@ function App() {
           <div
             style={{
               width: "100%",
-              marginTop: "20px",
             }}
           >
             <div
@@ -119,14 +113,7 @@ function App() {
                 justifyContent: "space-between",
               }}
             >
-              <div style = {{ color: "#8692A6",fontWeight:500, fontSize:"14px"}}>
-                <span>&copy;</span>
-                <span style = {{ 
-                  margin: "0 5px"
-                }}>{fullYear}</span>
-                <span>DevHire</span>
-                
-                </div>
+              <div>&copy;{fullYear}DevHire</div>
               <div>
                 <div className="dropdown">
                   <div className="dropbtn">
@@ -147,7 +134,7 @@ function App() {
                         className="fa fa-caret-up"
                         aria-hidden="true"
                         style={{
-                          marginLeft: "15px",
+                          marginLeft: "5px",
                         }}
                       ></i>
                     ) : (
@@ -156,7 +143,7 @@ function App() {
                         className="fa fa-caret-down"
                         aria-hidden="true"
                         style={{
-                          marginLeft: "15px",
+                          marginLeft: "5px",
                         }}
                       ></i>
                     )}
@@ -178,7 +165,7 @@ function App() {
                             style={{
                               width: "10px",
                               height: "10px",
-                              marginRight: "15px",
+                              marginRight: "10px",
                             }}
                           />
                           <span>{item?.name}</span>

@@ -59,7 +59,6 @@ function SideBar({ home, favourite, selected }) {
             padding: "10px",
             boxSizing: "border-box",
             display: "flex",
-            justifyContent: "center",
             alignItems: "center",
           }}
           className={selected === "home" ? "activePage" : null} >

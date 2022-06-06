@@ -1,5 +1,5 @@
 import React from "react";
-import './styles.css'
+
 function SideBar({ home, favourite, selected }) {
   return (
     <div
@@ -48,23 +48,15 @@ function SideBar({ home, favourite, selected }) {
             }}
           ></span>
         )}
-        <div style={{
-            width: "120px",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "row",
-          }}>
-          <span
-          style={{
-            padding: "10px",
-            boxSizing: "border-box",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          className={selected === "home" ? "activePage" : null} >
-            <i className="fa fa-search" aria-hidden="true"></i>
-          </span>
+        <div style={{ width: "100px" }}>
+          
+          <span style = {{ 
+            width: "100px",
+            height: "100px",
+            backgroundColor: "blue"
+            padding:1
+          }}><i className="fa fa-search" aria-hidden="true"></i></span>
+          
           <span
             style={{
               marginLeft: 10,
@@ -102,28 +94,10 @@ function SideBar({ home, favourite, selected }) {
 
         <div
           style={{
-            width: "120px",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "row",
-           
+            width: "100px",
           }}
         >
-          <span
-
-          style={{
-            width:"20px",
-            height:"20px",
-            padding: "10px",
-            boxSizing: "border-box",
-            display: "flex",
-            alignItems: "center",
-          }}
-          className={selected === "favourite" ? "activePage" : null}
-          >
-            <i className="fa fa-heart" aria-hidden="true"></i>
-          </span>
-
+          <i className="fa fa-heart" aria-hidden="true"></i>
           <span style={{ marginLeft: 10 }}>Favorite</span>
         </div>
       </div>

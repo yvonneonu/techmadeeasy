@@ -19,10 +19,8 @@ function App() {
     setSelected(pageName);
   };
 
-  
   const [currency, setCurrency] = useState([]);
   const [cardInfo, setCardinfo] = useState([]);
-  // const [fetchFromBase, setFromBase] = useState([])
   const [currentCurrencies, setCurrentCurrency] = useState(currency[0]);
   const getData = useCallback(async () => {
     axios
@@ -42,7 +40,6 @@ function App() {
             }
           );
           setCardinfo(res);
-        
           setCurrency(secondResponse.data.data.currencies);
           setCurrentCurrency(secondResponse.data.data.currencies[0])
         })
@@ -56,8 +53,7 @@ function App() {
     getData();
   }, [getData]);
 
-  const converter = (amount, item) => amount / item.divider;
-
+  const converter = (amount, item) => amount * item.divider;
   const handleSelectedCurrency = (item) => {
     setCurrentCurrency(item);
     setShowCountry(false);
@@ -178,7 +174,7 @@ function App() {
                             style={{
                               width: "10px",
                               height: "10px",
-                              marginRight: "15px",
+                              marginRight: "1px",
                             }}
                           />
                           <span>{item?.name}</span>

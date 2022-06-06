@@ -48,20 +48,8 @@ function SideBar({ home, favourite, selected }) {
             }}
           ></span>
         )}
-        <div style={{
-            width: "120px",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "row",
-          }}>
+        <div style={{ width: "100px" }}>
           <span
-          style={{
-            padding: "10px",
-            boxSizing: "border-box",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
           className={selected === "home" ? "activePage" : null} >
             <i className="fa fa-search" aria-hidden="true"></i>
           </span>
@@ -102,23 +90,10 @@ function SideBar({ home, favourite, selected }) {
 
         <div
           style={{
-            width: "120px",
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "row",
-           
+            width: "100px",
           }}
         >
           <span
-
-          style={{
-            width:"20px",
-            height:"20px",
-            padding: "10px",
-            boxSizing: "border-box",
-            display: "flex",
-            alignItems: "center",
-          }}
           className={selected === "favourite" ? "activePage" : null}
           >
             <i className="fa fa-heart" aria-hidden="true"></i>

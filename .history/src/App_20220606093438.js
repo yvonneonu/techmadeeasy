@@ -22,7 +22,6 @@ function App() {
   
   const [currency, setCurrency] = useState([]);
   const [cardInfo, setCardinfo] = useState([]);
-  // const [fetchFromBase, setFromBase] = useState([])
   const [currentCurrencies, setCurrentCurrency] = useState(currency[0]);
   const getData = useCallback(async () => {
     axios
@@ -42,7 +41,6 @@ function App() {
             }
           );
           setCardinfo(res);
-        
           setCurrency(secondResponse.data.data.currencies);
           setCurrentCurrency(secondResponse.data.data.currencies[0])
         })
@@ -57,7 +55,6 @@ function App() {
   }, [getData]);
 
   const converter = (amount, item) => amount / item.divider;
-
   const handleSelectedCurrency = (item) => {
     setCurrentCurrency(item);
     setShowCountry(false);

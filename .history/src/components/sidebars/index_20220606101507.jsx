@@ -56,11 +56,10 @@ function SideBar({ home, favourite, selected }) {
           }}>
           <span
           style={{
-            padding: "10px",
-            boxSizing: "border-box",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            width:"20px",
+            height:"20px",
+            padding: "10px"
+            borderb
           }}
           className={selected === "home" ? "activePage" : null} >
             <i className="fa fa-search" aria-hidden="true"></i>
@@ -106,7 +105,7 @@ function SideBar({ home, favourite, selected }) {
             display: "flex",
             alignItems: "center",
             flexDirection: "row",
-           
+
           }}
         >
           <span
@@ -115,9 +114,6 @@ function SideBar({ home, favourite, selected }) {
             width:"20px",
             height:"20px",
             padding: "10px",
-            boxSizing: "border-box",
-            display: "flex",
-            alignItems: "center",
           }}
           className={selected === "favourite" ? "activePage" : null}
           >

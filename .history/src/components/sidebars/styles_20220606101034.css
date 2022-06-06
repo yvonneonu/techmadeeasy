@@ -1,0 +1,7 @@
+.activePage{
+    background-color: blue;
+    width:10px;
+    height:50px;
+    padding: 5px;
+    box-sizing: border-box;
+}
